@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa de Entregas y Recolec   ciones</title>
+    <style>
+        /* Estilos para los mapas */
+        .map-container {
+            width: 700px; /* Ancho deseado */
+            height: 700px; /* Altura deseada */
+
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="scroll-auto"
+style="background-image: url(/static/poligonos-abstractos_3840x2160_xtrafondos.com\ \(1\).jpg);background-size: 100% auto;">
+    <nav class="bg-yellow-400 flex flex-row sm:h-24 2xl:h-24 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/4"></div>
+        <div class="w-1/2 flex items-center justify-end">
+            <div
+                class="hover:backdrop-blur-3xl bg-white/40 rounded-lg hover:ease-out duration-300 duration-200 hover:shadow-xl">
+                <h1 class="px-2 py-2 text-balance font-bold">{{nombre_usuario   }}</h1>
+            </div>
+
+            <img class="size-20 ms-5 mr-5 rounded-full shadow-2xl" src="{{ url_for('static', filename='user2.jpg') }}"
+                alt="">
+            <div class="text-[70px] mr-4 text-black">|</div>
+            <a href="{{url_for('logout')}}"
+                class="bg-red-500 px-3 py-2 mr-3 rounded-xl font-bold hover:ease-out duration-300 duration-200 hover:shadow-xl">Cerrar
+                Sesion</a>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <h2 class="mx-10 my-10 text-[40px] font-bold text-white">Mapa de Entregas</h2>
+    <a class="mx-12 mb-6 font-bold underline text-2xl text-white" href="{{url_for('inicio')}}">Ir a Inicio</a>
+    <div class="flex flex-col  items-center justify-center">
+        <div class="flex flex-col  items-center justify-center  h-[600px] w-[800px] backdrop-blur-2xl bg-white/60 rounded-xl">
+            <div class="map-container bg-white/50 h-96 rounded" id="mapa-entregas">
+                {{ mapa_entregas|safe }}
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

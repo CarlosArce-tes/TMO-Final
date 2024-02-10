@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMO | Inicio </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="">
+    <nav class="bg-yellow-500 flex flex-row sm:h-24 2xl:h-32 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/2"></div>
+        <div class="w-1/4 flex items-center justify-center">
+            <a href="{{url_for('login')}}" class="bg-red-500 px-3 py-2 rounded font-bold hover:-translate-y-2 duration-200 focus:ring focus:ring-red-500/50">Iniciar Sesión</a>
+        </div>
+    </nav>
+    <div class="pt-32">
+        <h1 class="text-center text-4xl font-bold mx-8 mt-5">¡Bienvenido a Troquelados Modulares S.A de C.V.!</h1>
+        <div class="flex">
+            <div class="w-1/2 ">
+                <div class="h-32"></div>
+                <div class=" bg-white-500 p-4">01</div>
+            </div>
+
+            <div class="w-1/2">
+                <div class="h-32"></div>
+                <div class=" mx-5 rounded grid justify-center shadow-2xl hover:backdrop-blur-lg">
+                    <h1 class="font-bold mt-5 text-2xl">Quiénes somos:</h1>
+                    <p class="mt-5 text-center text-gray-600">...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer class="bg-slate-600 fixed bottom-0 w-full h-32">
+    <div class="flex">
+        <div class="grow h-14 text-white ">
+            <div class="m-8">
+                <h5>Troqulados Modulares S.A de C.V.</h5>
+                <h5>Direccion:</h5>
+                <h5>Telefono</h5>
+            </div>
+
+        </div>
+
+        <div class="grow h-14 text-justify text-white">
+            <div class="m-8">
+                <h5>Acerca de Nosotros</h5>
+                <h5>Correo Electronico:</h5>
+                <h5>Redes Sociales</h5>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Solicitud de Entrega</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-yellow-400 flex flex-row sm:h-24 2xl:h-24 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/4"></div>
+        <div class="w-1/2 flex items-center justify-end">
+            <div
+                class="hover:backdrop-blur-3xl bg-white/40 rounded-lg hover:ease-out duration-300 duration-200 hover:shadow-xl">
+                <h1 class="px-2 py-2 text-balance font-bold">{{nombre_usuario   }}</h1>
+            </div>
+
+            <img class="size-20 ms-5 mr-5 rounded-full shadow-2xl" src="{{ url_for('static', filename='user2.jpg') }}"
+                alt="">
+            <div class="text-[70px] mr-4 text-black">|</div>
+            <a href="{{url_for('logout')}}"
+                class="bg-red-500 px-3 py-2 mr-3 rounded-xl font-bold hover:ease-out duration-300 duration-200 hover:shadow-xl">Cerrar
+                Sesion</a>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-4">Modificar Solicitud de Entrega</h1>
+        <a class="mx-12 mb-6 font-bold underline text-2xl text-white" href="{{url_for('inicio')}}">Ir a Inicio</a>
+        <form method="post" action="{{ url_for('modificar_solicitud_entrega', id=solicitud['id']) }}" class="space-y-4">
+            <div class="flex flex-col">
+                <label for="fecha_solicitada" class="text-sm font-medium">Fecha Solicitada:</label>
+                <input type="date" id="fecha_solicitada" name="fecha_solicitada" value="{{ solicitud['fecha_solicitada'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="fecha_entrega" class="text-sm font-medium">Fecha Entrega:</label>
+                <input type="date" id="fecha_entrega" name="fecha_entrega" value="{{ solicitud['fecha_entrega'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="material_a" class="text-sm font-medium">Material A:</label>
+                <input type="text" id="material_a" name="material_a" value="{{ solicitud['material_a'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="folio" class="text-sm font-medium">Folio:</label>
+                <input type="text" id="folio" name="folio" value="{{ solicitud['folio'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="material" class="text-sm font-medium">Material:</label>
+                <input type="text" id="material" name="material" value="{{ solicitud['material'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="cantidad" class="text-sm font-medium">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" value="{{ solicitud['cantidad'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="obra" class="text-sm font-medium">Obra:</label>
+                <input type="text" id="obra" name="obra" value="{{ solicitud['obra'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="estatus" class="text-sm font-medium">Estatus:</label>
+                <input type="text" id="estatus" name="estatus" value="{{ solicitud['estatus'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="entregada" class="text-sm font-medium">Entregada:</label>
+                <input type="number" id="entregada" name="entregada" value="{{ solicitud['entregada'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="restante" class="text-sm font-medium">Restante:</label>
+                <input type="number" id="restante" name="restante" value="{{ solicitud['restante'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="remision" class="text-sm font-medium">Remisión:</label>
+                <input type="text" id="remision" name="remision" value="{{ solicitud['remision'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="latitud" class="text-sm font-medium">Latitud:</label>
+                <input type="number" id="latitud" name="latitud" value="{{ solicitud['latitud'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <div class="flex flex-col">
+                <label for="longitud" class="text-sm font-medium">Longitud:</label>
+                <input type="number" id="longitud" name="longitud" value="{{ solicitud['longitud'] }}" class="border border-gray-300 rounded-md p-2">
+            </div>
+            <input type="submit" value="Modificar Solicitud" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        </form>
+    </div>
+</body>
+</html>

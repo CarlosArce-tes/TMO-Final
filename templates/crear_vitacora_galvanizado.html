@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Vitacora Galvanizado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-yellow-400 flex flex-row sm:h-24 2xl:h-24 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/4"></div>
+        <div class="w-1/2 flex items-center justify-end">
+            <div
+                class="hover:backdrop-blur-3xl bg-white/40 rounded-lg hover:ease-out duration-300 duration-200 hover:shadow-xl">
+                <h1 class="px-2 py-2 text-balance font-bold">{{nombre_usuario   }}</h1>
+            </div>
+
+            <img class="size-20 ms-5 mr-5 rounded-full shadow-2xl" src="{{ url_for('static', filename='user2.jpg') }}"
+                alt="">
+            <div class="text-[70px] mr-4 text-black">|</div>
+            <a href="{{url_for('logout')}}"
+                class="bg-red-500 px-3 py-2 mr-3 rounded-xl font-bold hover:ease-out duration-300 duration-200 hover:shadow-xl">Cerrar
+                Sesion</a>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Crear Vitacora Galvanizado</h1>
+        <a class="mx-12 mb-6 font-bold underline text-2xl " href="{{url_for('inicio')}}">Ir a Inicio</a>
+        <form action="{{ url_for('crear_vitacora_galvanizado') }}" method="POST" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="np">NP:</label>
+                    <input type="text" id="np" name="np" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="remision">Remisión:</label>
+                    <input type="text" id="remision" name="remision" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="orden_de_t">Orden de Trabajo:</label>
+                    <input type="text" id="orden_de_t" name="orden_de_t" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="folio">Folio:</label>
+                    <input type="text" id="folio" name="folio" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="viaticos">Viáticos:</label>
+                    <input type="text" id="viaticos" name="viaticos" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="cert_calidad">Certificado de Calidad:</label>
+                    <input type="text" id="cert_calidad" name="cert_calidad" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="cumple">Cumple:</label>
+                    <input type="text" id="cumple" name="cumple" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="factura">Factura:</label>
+                    <input type="text" id="factura" name="factura" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="folio_factura">Folio Factura:</label>
+                    <input type="text" id="folio_factura" name="folio_factura" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="producto">Producto:</label>
+                    <input type="text" id="producto" name="producto" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="text" id="cantidad" name="cantidad" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="parcialidad_recolectada">Parcialidad Recolectada:</label>
+                    <input type="text" id="parcialidad_recolectada" name="parcialidad_recolectada" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="recoleccion">Recolección:</label>
+                    <input type="date" id="recoleccion" name="recoleccion" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="peso">Peso:</label>
+                    <input type="text" id="peso" name="peso" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="costo">Costo:</label>
+                    <input type="text" id="costo" name="costo" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="estatus">Estatus:</label>
+                    <input type="text" id="estatus" name="estatus" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="nombre_empresa">Nombre de Empresa:</label>
+                    <input type="text" id="nombre_empresa" name="nombre_empresa" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="latitud">Latitud:</label>
+                    <input type="text" id="latitud" name="latitud" class="border rounded px-2 py-1 w-full">
+                </div>
+                <div>
+                    <label for="longitud">Longitud:</label>
+                    <input type="text" id="longitud" name="longitud" class="border rounded px-2 py-1 w-full">
+                </div>
+            </div>
+            <input type="submit" value="Crear entrada" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        </form>
+    </div>
+</body>
+</html>

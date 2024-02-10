@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Pagos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="scroll-auto"
+    style="background-image: url(/static/poligonos-abstractos_3840x2160_xtrafondos.com\ \(1\).jpg);background-size: 100% auto;">
+    <nav class="bg-yellow-400 flex flex-row sm:h-24 2xl:h-24 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/4"></div>
+        <div class="w-1/2 flex items-center justify-end">
+            <div
+                class="hover:backdrop-blur-3xl bg-white/40 rounded-lg hover:ease-out duration-300 duration-200 hover:shadow-xl">
+                <h1 class="px-2 py-2 text-balance font-bold">{{nombre_usuario }}</h1>
+            </div>
+
+            <img class="size-20 ms-5 mr-5 rounded-full shadow-2xl" src="{{ url_for('static', filename='user2.jpg') }}"
+                alt="">
+            <div class="text-[70px] mr-4 text-black">|</div>
+            <a href="{{url_for('logout')}}"
+                class="bg-red-500 px-3 py-2 mr-3 rounded-xl font-bold hover:ease-out duration-300 duration-200 hover:shadow-xl">Cerrar
+                Sesion</a>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <h1 class="text-2xl font-bold mb-4 text-white text-[50px] mt-10 mx-10">Lista de Pagos</h1>
+    <a class="mx-12 mb-8 font-bold underline text-2xl text-white" href="{{url_for('inicio')}}">Ir a Inicio</a>
+    <div class="flex flex-col items-center justify-center">
+        <div class="backdrop-blur-2xl rounded-xl bg-white/50">
+            <h1 class="text-center m-10 font-bold text-[45px]">Pagos</h1>
+        <table class="border-collapse border rounded-xl border-gray-400 mx-10 my-10">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border border-gray-400 px-10 py-2">ID</th>
+                    <th class="border border-gray-400 px-10 py-2">Nombre de Archivo</th>
+                    <th class="border border-gray-400 px-10 py-2">Descripción</th>
+                    <th class="border border-gray-400 px-10 py-2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pago in pagos %}
+                <tr>
+                    <td class="border border-gray-400 px-10 py-4 backdrop-blur-2xl bg-white/50">{{ pago[0] }}</td>
+                    <td class="border border-gray-400 px-10 py-4 backdrop-blur-2xl bg-white/50">{{ pago[1] }}</td>
+                    <td class="border border-gray-400 px-10 py-4 backdrop-blur-2xl bg-white/50">{{ pago[2] }}</td>
+                    <td class="border border-gray-400 px-10 py-4 backdrop-blur-2xl bg-white/50">
+                        <a href="{{ url_for('editar_pago', id=pago[0]) }}"
+                            class="px-3 py-2 bg-yellow-600 rounded-xl hover:ease-out duration-300 duration-200 hover:shadow-xl hover:-translate-y-2">Editar</a>
+                        <a href="{{ url_for('eliminar_pago', id=pago[0]) }}"
+                            class="px-3 py-2 bg-red-600 rounded-xl hover:ease-out duration-300 duration-200 hover:shadow-xl hover:-translate-y-2">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('crear_pago') }}" class="mx-10 my-5 py-2 bg-green-500 rounded-xl block mt-4 text-black-500 w-[200px] text-center hover:ease-out duration-300 duration-200 hover:shadow-xl hover:-translate-y-2">Crear Nuevo Pago</a>
+    </div>
+    </div>
+    
+</body>
+
+</html>

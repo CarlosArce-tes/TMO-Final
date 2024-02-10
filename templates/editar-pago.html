@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Pago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center"
+    style="background-image: url(/static/poligonos-abstractos_3840x2160_xtrafondos.com\ \(1\).jpg);background-size: 100% auto;">
+    <nav class="bg-yellow-400 flex flex-row sm:h-24 2xl:h-24 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center overflow-auto">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/4"></div>
+        <div class="w-1/2 flex items-center justify-end">
+            <div
+                class="hover:backdrop-blur-3xl bg-white/40 rounded-lg hover:ease-out duration-300 duration-200 hover:shadow-xl">
+                <h1 class="px-2 py-2 text-balance font-bold">{{nombre_usuario }}</h1>
+            </div>
+
+            <img class="size-20 ms-5 mr-5 rounded-full shadow-2xl" src="{{ url_for('static', filename='user2.jpg') }}"
+                alt="">
+            <div class="text-[70px] mr-4 text-black">|</div>
+            <a href="{{url_for('logout')}}"
+                class="bg-red-500 px-3 py-2 mr-3 rounded-xl font-bold hover:ease-out duration-300 duration-200 hover:shadow-xl">Cerrar
+                Sesion</a>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <div>
+        <a class="mx-12 mb-6 font-bold underline text-2xl text-white" href="{{url_for('inicio')}}">Ir a Inicio</a>
+    </div>
+    <div class="max-w-md w-full p-8 backdrop-blur-2xl bg-white/50 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6">Actualizar Pago</h1>
+
+        <form method="post">
+            <div class="mb-4">
+                <label for="nombre_archivo" class="block text-gray-700">Nombre del archivo:</label>
+                <input type="text" id="nombre_archivo" name="nombre_archivo" value="{{ pago[1] }}"
+                    class="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="descripcion" class="block text-gray-700">Descripción:</label>
+                <textarea id="descripcion" name="descripcion"
+                    class="border border-gray-300 px-3 py-2 rounded-md w-full h-24 resize-none focus:outline-none focus:ring focus:border-blue-500">{{ pago[2] }}</textarea>
+            </div>
+            <div>
+                <input type="submit" value="Actualizar"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link class="rounded" rel="icon" type="image/png" href="/static/tmo.svg">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen" style="background-image: url(/static/poligonos-abstractos_3840x2160_xtrafondos.com\ \(1\).jpg);background-size: 100% auto;">
+    <nav class="bg-yellow-500 flex flex-row sm:h-24 2xl:h-32 fixed top-0 left-0 right-0 w-full">
+        <div class="w-1/4 flex items-center justify-center">
+            <h1 class="text-[50px] font-bold">TMO de Mexico</h1>
+        </div>
+        <div class="w-1/2"></div>
+        <div class="w-1/4 flex items-center justify-center">
+        </div>
+    </nav>
+    <div class="bg-white p-8 rounded-xl drop-shadow-2xl w-[450px] h-auto backdrop-blur-xl bg-white/50">
+        <div class="grid place-items-center overflow-visible">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-32 h-32 animate-bounce shadow-xl rounded-full px-auto">
+                <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
+              </svg>
+              
+        </div>
+        <h1 class="text-center text-[40px] font-bold mb-10">Iniciar sesión</h1>
+        <form action="/login" method="post">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-bold mb-2">Correo electrónico</label>
+                <input type="text" id="nombre_usuario" name="nombre_usuario"
+                    class="rounded-xl px-3 py-2 w-full shadow-inner "
+                    placeholder="usuario" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700 font-bold mb-2">Contraseña</label>
+                <input type="password" id="password" name="password"
+                    class="rounded-xl px-3 py-2 w-full"
+                    placeholder="Contraseña" required>
+            </div>
+            <div class="flex flex-col  items-center justify-center m-4">
+                <input type="submit" class="bg-yellow-500 py-2 px-4 hover:font-bold hover:shadow-xl rounded-full transition ease-in-out delay-150">
+                <a class="mt-3 hover:underline decoration-yellow-500" href="">Olvide mi contraseña</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
